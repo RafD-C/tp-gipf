@@ -13,11 +13,11 @@ pipeline {
       }
       stage('Run Sonarqube') {
           steps {
-              sh './gradlew sonar \
-                  -Dsonar.projectKey=tp \
-                  -Dsonar.projectName="tp" \
-                  -Dsonar.host.url=http://172.17.0.1:9000 \
-                  -Dsonar.token=sqp_ce3212db5c33d3d53335643be75c6c724131602d'
+              sh '''./gradlew sonar \
+                    -Dsonar.projectKey=tp-gipf \
+                    -Dsonar.projectName='tp-gipf' \
+                    -Dsonar.host.url=http://localhost:9000 \
+                    -Dsonar.token=sqp_edbedb5f1efc5084970cc98e3b4cea2762281165'''
           }
       }
       stage('Run Tests') {
