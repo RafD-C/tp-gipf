@@ -13,7 +13,7 @@ pipeline {
       }
     stage('Test') {
           steps {
-              sh "./gradlew jacocoTestReport" publishHTML(target: [reportDir:'build/jacocoHtml', reportFiles: 'index.html', reportName: 'Code Coverage'])
+              sh "./gradlew jacocoTestReport publishHTML(target: [reportDir:'build/jacocoHtml', reportFiles: 'index.html', reportName: 'Code Coverage'])"
           }
       }
       stage('Sonar') {
