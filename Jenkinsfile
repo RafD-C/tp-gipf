@@ -13,7 +13,7 @@ pipeline {
       }
     stage('Test') {
           steps {
-              sh "./gradlew jacocoTestReport publishHTML(target: [reportDir:'build/jacocoHtml', reportFiles: 'index.html', reportName: 'Code Coverage'])"
+              sh './gradlew -Dhttps.proxyHost="proxy1-rech" -Dhttps.proxyPort=3128 test'
           }
       }
       stage('Sonar') {
