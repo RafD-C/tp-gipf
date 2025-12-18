@@ -22,27 +22,4 @@ stage('Sonar') {
 '''
     }
   }
-  stage('SonarQube Analysis') {
-    steps {
-      withCredentials([string(credentialsId: 'tp-gipf', variable: 'SONAR_TOKEN')]) {
-      withSonarQubeEnv('SonarQube') {
-      sh '''
-./gradlew sonarqube
--Dsonar.projectKey=tp-gipf
--Dsonar.projectName='tp-gipf'
--Dsonar.host.url=${SONAR_HOST_URL}
--Dsonar.login=${SONAR_TOKEN}
-'''
-        }
-      }
-    }
-  }
-}
-
-  post {
-    always {
-      junit '/src/test/java/gipf//.xml'
-      archiveArtifacts artifacts: '**/build/libs/.jar', allowEmptyArchive: true
-    }
-  }  
 }
