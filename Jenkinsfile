@@ -23,7 +23,7 @@ stage('Build') {
       sh '''
 ./gradlew sonarqube
 -Dsonar.projectKey=tp-gipf
--Dsonar.projectName=tp-gipf
+-Dsonar.projectName='tp-gipf'
 -Dsonar.host.url=${SONAR_HOST_URL}
 -Dsonar.login=${SONAR_TOKEN}
 '''
