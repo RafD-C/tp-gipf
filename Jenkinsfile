@@ -11,9 +11,15 @@ stages {
     }
   }
   
-stage('Build') {
+stage('Sonar') {
     steps {
-      sh './gradlew build -Dhttps.proxyHost="proxy1-rech" -Dhttps.proxyPort=3128'
+      sh '''
+./gradlew sonarqube
+-Dsonar.projectKey=tp-gipf
+-Dsonar.projectName='tp-gipf'
+-Dsonar.host.url=${SONAR_HOST_URL}
+-Dsonar.login=${SONAR_TOKEN}
+'''
     }
   }
   stage('SonarQube Analysis') {
