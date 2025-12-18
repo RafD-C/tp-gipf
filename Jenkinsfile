@@ -18,7 +18,7 @@ stage('Build') {
   }
   stage('SonarQube Analysis') {
     steps {
-      withCredentials([string(credentialsId: 'Jacoco', variable: 'SONAR_TOKEN')]) {
+      withCredentials([string(credentialsId: 'tp-gipf', variable: 'SONAR_TOKEN')]) {
       withSonarQubeEnv('SonarQube') {
       sh '''
 ./gradlew sonarqube
