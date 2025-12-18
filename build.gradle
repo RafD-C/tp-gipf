@@ -43,9 +43,3 @@ jar {
         attributes 'Main-Class': 'gipf.Main'
     }
 }
-
-sonar {
-  properties {
-    property "sonar.projectKey", "tp-gipf"
-    property "sonar.projectName", "tp-gipf"
-  }
