@@ -22,8 +22,8 @@ stage('Build') {
       withSonarQubeEnv('SonarQube') {
       sh '''
 ./gradlew sonarqube
--Dsonar.projectKey=Jacoco
--Dsonar.projectName=Jacoco
+-Dsonar.projectKey=tp-gipf
+-Dsonar.projectName=tp-gipf
 -Dsonar.host.url=${SONAR_HOST_URL}
 -Dsonar.login=${SONAR_TOKEN}
 '''
